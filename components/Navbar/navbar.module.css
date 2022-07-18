@@ -1,0 +1,119 @@
+.navbar {
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding: 0.3rem 2rem;
+    font-size: 1.2rem;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid;
+    border-bottom-color: transparent;
+}
+
+.sticky {
+    transition: all 0.3s ease-out 0s;
+    backdrop-filter: saturate(250%) blur(5px);
+    background-color: rgba(var(--color-primary-900),.5);
+    border-bottom-color: var(--color-primary-700);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+
+.brand {
+}
+
+.desktop {
+    display: none;
+    flex-direction: row;
+}
+
+.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: all 0.4s ease-in-out;
+    visibility: hidden;
+    width: auto;
+    margin: .7rem;
+    z-index: 1100;
+    background-color: var(--color-primary-900);
+    border: solid 1px var(--color-primary-600);
+    border-radius: 10px;
+}
+
+.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.toggler {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    color: var(--color-light-0);
+    padding: 0;
+    cursor: pointer;
+}
+
+.toggler > svg {
+    height: 2rem;
+    width: 2rem;
+}
+
+.link {
+    font-weight: 400;
+    color: var(--color-light-0);
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    transition: all .3s ease-out 0s;
+}
+
+.link:after {
+    content: "";
+    position: relative;
+    display: block;
+    height: 5px;
+    width: 0;
+    border-radius: 16px;
+    background: var(--color-primary-400);
+    bottom: 1px;
+    left: 0;
+    z-index: -1;
+    transition: all .3s ease-out 0s;
+}
+
+.link:hover:after {
+    width: 100%;
+}
+
+.link > svg {
+    vertical-align: middle;
+    margin-bottom: 0.3rem;
+    margin-right: 0.3rem;
+}
+
+@media screen and (min-width: 768px) {
+    .desktop {
+        display: flex;
+    }
+
+    .toggler {
+        display: none;
+    }
+}
